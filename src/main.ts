@@ -44,7 +44,7 @@ import {
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LeftMenuComponent} from './app/components/country/country.component';
+import {TreeComponent} from './app/components/country/country.component';
 
 @NgModule({
   exports: [
@@ -98,9 +98,9 @@ export class DemoMaterialModule {}
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [LeftMenuComponent],
-  declarations: [LeftMenuComponent],
-  bootstrap: [LeftMenuComponent],
+  entryComponents: [TreeComponent],
+  declarations: [TreeComponent],
+  bootstrap: [TreeComponent],
   providers: []
 })
 export class AppModule {}

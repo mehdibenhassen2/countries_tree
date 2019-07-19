@@ -24,7 +24,7 @@ export class CountriesFlatNode {
 /**
  * The Json object for Country list data.
  */
-const TREE_DATA = {
+/** const TREE_DATA = {
   'South America ': {
     Venezuela: ['Caracas', 'Maracaibo'],
     Brazil: ['Sao Paulo', 'Rio de Janeiro'],
@@ -37,6 +37,9 @@ const TREE_DATA = {
     Canada: ['Toronto', 'Vancouver']
 
   }
+};*/
+const TREE_DATA = {
+  ' Tree ': ''
 };
 
 
@@ -111,20 +114,13 @@ export class ChecklistDatabase {
  * @title Tree with checkboxes
  */
 
-
-
-
-
-
-
-
 @Component({
   selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss'],
   providers: [ChecklistDatabase]
 })
-export class LeftMenuComponent {
+export class TreeComponent {
   /** Map from flat node to nested node. This helps us finding the nested node to be modified */
   flatNodeMap: Map<CountriesFlatNode, CountriesNode> = new Map<CountriesFlatNode, CountriesNode>();
 
@@ -209,11 +205,11 @@ export class LeftMenuComponent {
   /** Select the category so we can insert the new node. */
   addNewPlace(node: CountriesFlatNode) {
     const parentNode = this.flatNodeMap.get(node);
-   
+
     let isParentHasChildren: boolean = false;
     if (parentNode.children)
       isParentHasChildren = true;
-    
+
     this.database.insertPlace(parentNode!, '');
     // expand the subtree only if the parent has children (parent is not a leaf node)
     if (isParentHasChildren)
